@@ -43,9 +43,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::insertData()
 {
-    bool isOK;
-    QString text = QInputDialog::getText(this, "插入数据", "请输入数据：", QLineEdit::Normal, "新数据", &isOK);
-    if (isOK) {
+    bool ok;
+    QString text = QInputDialog::getText(this, "插入数据", "请输入数据：", QLineEdit::Normal, "新数据", &ok);
+    if (ok) {
         int row = listView->currentIndex().row();
         qDebug() << row;
         if (row == -1) row = 0;
